@@ -13,6 +13,12 @@
         android:text="Workout"
         android:textSize="40dp" />
 
-
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_weight="1"
+        android:textSize="25dp"
+        android:id="@+id/time"
+        />
 </LinearLayout>

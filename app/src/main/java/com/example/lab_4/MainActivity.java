@@ -2,6 +2,7 @@ package com.example.lab_4;
 
 import android.content.Intent;
 import android.preference.PreferenceManager;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -66,18 +67,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Intent intentStart = new Intent(this, ActivityRunProgram.class);
-        intentStart.putExtra("WORKOUTS", workouts);
-        startActivity(intentStart);
+        Intent intentStartWorkout = new Intent(this, ActivityRunProgram.class);
+        intentStartWorkout.putExtra("WORKOUTS", workouts);
+        startActivity(intentStartWorkout);
 
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Toast.makeText(this, "Miksi?", Toast.LENGTH_SHORT).show();
 
-        if(requestCode == NEW_PART_REQ_ID && requestCode == RESULT_OK){
+
+        if(requestCode == NEW_PART_REQ_ID && resultCode == RESULT_OK){
             WorkoutPartBase workoutPartBase = (WorkoutPartBase) data.getSerializableExtra("WORKOUTPART");
             workouts.add(workoutPartBase);
         }

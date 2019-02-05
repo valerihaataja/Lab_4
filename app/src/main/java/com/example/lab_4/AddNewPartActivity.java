@@ -18,7 +18,7 @@ public class AddNewPartActivity extends AppCompatActivity implements View.OnClic
 
     RadioButton radiobutton_workout;
     RadioButton radiobutton_pause;
-    EditText text_editor;
+    EditText editText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +26,7 @@ public class AddNewPartActivity extends AppCompatActivity implements View.OnClic
         setContentView(R.layout.activity_new_part);
         radiobutton_workout = findViewById(R.id.radiobutton_workout);
         radiobutton_pause =  findViewById(R.id.radiobutton_pause);
-        text_editor = findViewById(R.id.text_editor);
+        editText = findViewById(R.id.text_editor);
         findViewById(R.id.button_add).setOnClickListener(this);
         
     }
@@ -35,13 +35,13 @@ public class AddNewPartActivity extends AppCompatActivity implements View.OnClic
     public void onClick(View v) {
         if(radiobutton_workout.isChecked()){
             WorkoutPart workoutPart = new WorkoutPart();
-            workoutPart.setTime(text_editor.getText().toString());
+            workoutPart.setTime(editText.getText().toString());
             workoutPart.setName();
             returnData(workoutPart);
         }
         else if(radiobutton_pause.isChecked()){
             PausePart pausePart = new PausePart();
-            pausePart.setTime(text_editor.getText().toString());
+            pausePart.setTime(editText.getText().toString());
             pausePart.setName();
             returnData(pausePart);
         }

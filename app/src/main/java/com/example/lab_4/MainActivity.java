@@ -29,8 +29,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        list_view = findViewById(R.id.list_view);
+        list_view = (ListView)findViewById(R.id.list_view);
         findViewById(R.id.button_start_workout).setOnClickListener(this);
+
 
 
 
@@ -49,7 +50,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onOptionsItemSelected(MenuItem item) {
         super.onOptionsItemSelected(item);
         Intent intent = new Intent(this, AddNewPartActivity.class);
-        startActivity(intent);
+        startActivityForResult(intent, NEW_PART_REQ_ID);
         return true;
     }
 
@@ -65,15 +66,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == R.id.button_add) {
-            Intent intent = new Intent(this, AddNewPartActivity.class);
-            startActivityForResult(intent, NEW_PART_REQ_ID);
-        }
+        Intent intentStart = new Intent(this, ActivityRunProgram.class);
+        intentStart.putExtra("WORKOUTS", workouts);
+        startActivity(intentStart);
+
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        Toast.makeText(this, "Miksi?", Toast.LENGTH_SHORT).show();
 
         if(requestCode == NEW_PART_REQ_ID && requestCode == RESULT_OK){
             WorkoutPartBase workoutPartBase = (WorkoutPartBase) data.getSerializableExtra("WORKOUTPART");

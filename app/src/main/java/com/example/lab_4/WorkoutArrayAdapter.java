@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.lab_4.model.PausePart;
 import com.example.lab_4.model.WorkoutPart;
@@ -46,7 +47,7 @@ public class WorkoutArrayAdapter extends ArrayAdapter<WorkoutPartBase> {
 
     @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @Nullable ViewGroup parent) {
+    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         WorkoutPartBase workoutPartBase = getItem(position);
 
         if (convertView == null) {

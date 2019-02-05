@@ -39,7 +39,7 @@ public class AddNewPartActivity extends AppCompatActivity implements View.OnClic
             workoutPart.setName();
             returnData(workoutPart);
         }
-        if(radiobutton_pause.isChecked()){
+        else if(radiobutton_pause.isChecked()){
             PausePart pausePart = new PausePart();
             pausePart.setTime(text_editor.getText().toString());
             pausePart.setName();

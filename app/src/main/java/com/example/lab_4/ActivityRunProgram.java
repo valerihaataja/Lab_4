@@ -1,12 +1,11 @@
 package com.example.lab_4;
 
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
-import com.example.lab_4.model.PausePart;
-import com.example.lab_4.model.WorkoutPart;
+
+
 import com.example.lab_4.model.WorkoutPartBase;
 
 import java.util.ArrayList;
@@ -37,6 +36,9 @@ public class ActivityRunProgram extends AppCompatActivity {
             currentType = iterator.next();
             workout_type = currentType.getName();
             textview_what_type.setText(workout_type);
+        }
+        else{
+            finish();
         }
     }
 

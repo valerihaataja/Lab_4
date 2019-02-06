@@ -17,8 +17,7 @@ public class PausePart extends WorkoutPartBase {
 
     @Override
     public String getTime() {
-        return null;
-    }
+        return time;}
 
     @Override
     public void setTime(String data) {

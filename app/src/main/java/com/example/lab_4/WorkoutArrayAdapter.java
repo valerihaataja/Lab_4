@@ -54,6 +54,7 @@ public class WorkoutArrayAdapter extends ArrayAdapter<WorkoutPartBase> {
             int layoutId = 0;
             if (getItemViewType(position) == VIEW_TYPE_WORKOUT) {
                 layoutId = R.layout.list_row_workout;
+
             } else {
                 layoutId = R.layout.list_row_pause;
             }

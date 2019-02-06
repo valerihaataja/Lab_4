@@ -17,7 +17,7 @@ public class WorkoutPart extends WorkoutPartBase {
 
     @Override
     public String getTime() {
-        return null;
+        return time;
     }
 
     @Override

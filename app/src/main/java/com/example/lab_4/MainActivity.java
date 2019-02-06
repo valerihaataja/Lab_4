@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        list_view = (ListView)findViewById(R.id.list_view);
+        list_view = findViewById(R.id.list_view);
         findViewById(R.id.button_start_workout).setOnClickListener(this);
 
 

@@ -1,6 +1,8 @@
 package com.example.lab_4;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
@@ -17,8 +19,10 @@ public class ActivityRunProgram extends AppCompatActivity {
     TextView textview_time;
     ArrayList<WorkoutPartBase> workouts;
     ListIterator<WorkoutPartBase> iterator;
-    WorkoutPartBase currentType;
+    String currentWorkout;
+    String aika;
     String workout_type;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,18 +33,11 @@ public class ActivityRunProgram extends AppCompatActivity {
         workouts = (ArrayList<WorkoutPartBase>) getIntent().getSerializableExtra("WORKOUTS");
         iterator = workouts.listIterator();
 
+        iterator.hasNext();
     }
 
-    private void iterate(){
-        if(iterator.hasNext()){
-            currentType = iterator.next();
-            workout_type = currentType.getName();
-            textview_what_type.setText(workout_type);
-        }
-        else{
-            finish();
-        }
-    }
+
+
 
 
 }

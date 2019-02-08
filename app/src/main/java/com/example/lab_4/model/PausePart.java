@@ -7,7 +7,7 @@ public class PausePart extends WorkoutPartBase {
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
 
     @Override

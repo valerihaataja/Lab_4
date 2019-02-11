@@ -17,7 +17,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddNewPartActivity" />
-        <activity android:name=".ActivityRunProgram"/>
+        <activity android:name=".ActivityRunProgram" />
+
+
+
+
+
+"/>
     </application>
 
 </manifest>

@@ -30,7 +30,7 @@ public class ActivityRunProgram extends AppCompatActivity {
         setContentView(R.layout.activity_run_program);
         textview_what_type.findViewById(R.id.textview_what_type);
         textview_time.findViewById(R.id.textview_time);
-        ArrayList<WorkoutPartBase> workouts = (ArrayList<WorkoutPartBase>) getIntent().getSerializableExtra("WORKOUTS");
+        workouts = (ArrayList<WorkoutPartBase>) getIntent().getSerializableExtra("WORKOUTS");
         iterator = workouts.listIterator();
 
         iterator.hasNext();
